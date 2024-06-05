@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Edit Vehicle</title>
+</head>
+<body>
+<h1>Edit Vehicle</h1>
+<form th:action="@{/admin/vehicle/edit/{id}(id=${vehicle.vehicleId})}" th:object="${vehicle}" method="post">
+  <div>
+    <label>Name:</label>
+    <input type="text" th:field="*{vehicleName}" />
+  </div>
+  <div>
+    <label>Model:</label>
+    <input type="text" th:field="*{vehicleModel}" />
+  </div>
+  <div>
+    <label>Year of Manufacture:</label>
+    <input type="number" th:field="*{yearOfManufacture}" />
+  </div>
+  <div>
+    <label>Color:</label>
+    <input type="text" th:field="*{vehicleColor}" />
+  </div>
+  <div>
+    <button type="submit">Save</button>
+  </div>
+</form>
+</body>
+</html>
